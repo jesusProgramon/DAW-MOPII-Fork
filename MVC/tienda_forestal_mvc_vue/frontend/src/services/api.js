@@ -95,3 +95,16 @@ export async function eliminarProducto(id) {
   const res = await axios.delete(`/api/productos/${id}`);
   return res.data;
 }
+
+// Añadida por mi
+export async function eliminarProductoFiltrado(params = {}) {
+  const query = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== null && value !== undefined && value !== "")
+      query.append(key, value);
+  }
+
+  const res = await axios.delete(`/api/productos/filtrar?${query.toString()}`);
+  return res.data;
+}

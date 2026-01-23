@@ -18,11 +18,11 @@
     <input
       type="text"
       v-model="terminoBusqueda"
-      placeholder="Buscar por nombre, tipo o marca"
-      @keyup.enter="accionBuscar"
+      placeholder="Solo puedes buscar por nombre, tipo o marca. Así que espabila."
+      @keyup.enter="accionEncontrar"
       class="search-input"
     />
-    <button @click="accionBuscar">Buscar</button>
+    <button @click="accionEncontrar">Buscar</button>
 
     <!-- ===============================
          FILTROS AVANZADOS
@@ -55,7 +55,7 @@
         <img :src="'/img/' + p.imagen" :alt="p.nombre" />
         <h3>{{ p.nombre }}</h3>
         <p>{{ p.descripcion }}</p>
-        <strong>{{ p.precio }} €</strong><br>
+        <strong>{{ p.precio }} Euros</strong><br>
         <small>Stock: {{ p.stock }}</small>
       </div>
     </div>
@@ -65,7 +65,7 @@
          =============================== -->
     <div class="paginacion" v-if="totalPaginas > 1">
       <button @click="cambiarPagina(paginaActual - 1)" :disabled="paginaActual === 1">
-        Anterior
+        ← Anterior
       </button>
 
       <button
@@ -78,12 +78,12 @@
       </button>
 
       <button @click="cambiarPagina(paginaActual + 1)" :disabled="paginaActual === totalPaginas">
-        Siguiente
+        → Siguiente
       </button>
     </div>
 
     <!-- Información adicional -->
-    <p v-if="totalResultados > 0">
+    <p v-if="totalResultados > 0" style="color:green">
       Mostrando página {{ paginaActual }} de {{ totalPaginas }}
       ({{ totalResultados }} productos en total)
     </p>
@@ -173,7 +173,7 @@ const cargarProductos = async () => {
    - Llama a /api/productos/buscar?termino=...
    - Se ejecuta al pulsar ENTER o el botón Buscar
    ============================================================ */
-const accionBuscar = async () => {
+const accionEncontrar = async () => {
   paginaActual.value = 1
 
   // Si no hay texto, recargamos el catálogo normal
@@ -229,39 +229,39 @@ cargarProductos()
 /* ---- DISEÑO BÁSICO PARA GRID DE PRODUCTOS ---- */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
 
-.card {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
 
-.card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
 
-.filtros {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
+  .filtros {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-.paginacion button {
-  margin: 0 4px;
-  padding: 0.5rem 0.8rem;
-}
+  .paginacion button {
+    margin: 0 4px;
+    padding: 0.5rem 0.8rem;
+  }
 
-button.activo {
-  background-color: #4CAF50;
-  color: white;
-  font-weight: bold;
-}
+  button.activo {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
 </style>
