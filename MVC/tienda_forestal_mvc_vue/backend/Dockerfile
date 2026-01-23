@@ -28,4 +28,3 @@ EXPOSE 5000
 
 # Comando de arranque de la aplicación
 CMD ["python", "app/run.py"]
-

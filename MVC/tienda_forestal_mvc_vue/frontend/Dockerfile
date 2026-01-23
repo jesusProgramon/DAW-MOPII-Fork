@@ -41,4 +41,3 @@ EXPOSE 80
 # IMPORTANTE: forzamos el puerto 8080
 #CMD ["serve", "-s", "dist", "-l", "8080"]
 #Nginx se inicia automáticamente, no hace falta CMD
-

@@ -16,8 +16,6 @@ CORS(app)
 
 # Registrar blueprint
 app.register_blueprint(producto_blueprint, url_prefix="/api")
-with app-test_request_context():
-    print(app.url_map)
 
 @app.route("/")
 def home():
