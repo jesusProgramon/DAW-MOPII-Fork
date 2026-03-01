@@ -3,7 +3,7 @@ services:
   backend:
     build: ./backend
     container_name: tienda_flask_backend
-    restart: unless-stop
+    restart: no
     ports:
       - "5000:5000"
     environment:
@@ -19,7 +19,7 @@ services:
   frontend:
     build: ./frontend
     container_name: tienda_vue_frontend
-    restart: unless-stop
+    restart: no
     ports:
       - "8080:80"
     depends_on:
@@ -29,7 +29,7 @@ services:
   db:
     image: mysql:8.0
     container_name: tienda_mysql_db
-    restart: unless-stop 
+    restart: no
     environment:
       MYSQL_ROOT_PASSWORD: iesmariamoliner
       MYSQL_DATABASE: tienda_forestal
