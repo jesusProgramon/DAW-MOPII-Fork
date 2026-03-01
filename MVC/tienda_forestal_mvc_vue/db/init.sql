@@ -40,5 +40,19 @@ INSERT INTO productos (nombre, tipo, marca, descripcion, precio, stock, imagen) 
 ('Hacha Husqvarna X-Cut X162', 'hacha', 'Husqvarna', 'Hacha profesional de talá-intermedia', 69.00, 28, 'hacha_husqvarna_xcut_x162.jpg'),
 ('Maza Stanley FatMax FME-MFM18XB-1', 'maza', 'Stanley', 'Maza profesional para uso forestal con mango de fibra', 79.90, 20, 'maza_stanley_fatmax_fmemfm18xb1.jpg'),
 ('Casco Forestal Husqvarna Technical XR', 'accesorio', 'Husqvarna', 'Casco técnico con protección para tala intensiva', 99.90, 15, 'casco_husqvarna_technical_xr.jpg'),
-('Kit Limpieza Motosierra Stihl Premium', 'accesorio', 'Stihl', 'Kit de limpieza y mantenimiento para motosierra', 39.00, 30, 'kit_limpieza_motosierra_stihl_premium.jpg');
-
+('Motosierra Makita EA4300F', 'motosierra', 'Makita', 'Motosierra profesional para tala y poda con motor de bajo consumo', 529.00, 7, 'motosierra_makita_ea4300f.jpg'),
+('Desbrozadora Stihl FS 94', 'desbrozadora', 'Stihl', 'Desbrozadora a gasolina para mantenimiento de áreas verdes', 319.00, 9, 'desbrozadora_stihl_fs94.jpg'),
+('Sopladora Makita DUB362Z', 'sopladora', 'Makita', 'Sopladora inalámbrica a batería para limpieza exterior', 189.00, 13, 'sopladora_makita_dub362z.jpg'),
+('Taladro Bosch GSB 18V-85', 'taladro', 'Bosch', 'Taladro percutor profesional con batería incluida', 279.00, 10, 'taladro_bosch_gsb18v85.jpg'),
+('Hacha Fiskars X15', 'hacha', 'Fiskars', 'Hacha de mano para talla y leña ligera', 44.90, 35, 'hacha_fiskars_x15.jpg'),
+('Maza Estwing Big Blue 12lb', 'maza', 'Estwing', 'Maza de 12 libras con mango de fibra de vidrio', 89.00, 14, 'maza_estwing_bigblue12lb.jpg'),
+('Batería Husqvarna BLi200', 'accesorio', 'Husqvarna', 'Batería de iones de litio de 200 Wh para maquinaria forestal', 199.00, 22, 'bateria_husqvarna_bli200.jpg'),
+('Cargador rápido Stihl AL 500', 'accesorio', 'Stihl', 'Cargador rápido para baterías Stihl AS y AP', 129.00, 15, 'cargador_stihl_al500.jpg'),
+('Pantalones de protección forestal Pinewood', 'accesorio', 'Pinewood', 'Pantalones con protecciones para motosierra', 149.00, 18, 'pantalones_pinewood_proteccion.jpg'),
+('Botas de seguridad forestal Haix', 'accesorio', 'Haix', 'Botas altas con protección para trabajos forestales', 229.00, 10, 'botas_haix_forestal.jpg'),
+('Kit Limpieza Motosierra Stihl Premium', 'accesorio', 'Stihl', 'Kit de limpieza y mantenimiento para motosierra', 39.00, 30, 'kit_limpieza_motosierra_stihl_premium.jpg'),
+('GPS Garmin eTrex 22x', 'equipo', 'Garmin', 'GPS de mano resistente al agua con mapas topográficos para orientación en el monte', 199.99, 8, 'gps_garmin_etrex22x.jpg'),
+('Mochila de hidratación 3L', 'accesorio', 'CamelBak', 'Mochila ligera con depósito de agua para largas jornadas forestales', 59.90, 25, 'mochila_hidratacion_3l.jpg'),
+('Linterna frontal Black Diamond Spot 400', 'iluminacion', 'Black Diamond', 'Frontal recargable con 400 lúmenes, ideal para trabajos con poca luz', 49.95, 20, 'linterna_blackdiamond_spot400.jpg'),
+('Walkie-talkie Motorola T82 Extreme', 'comunicacion', 'Motorola', 'Radio bidireccional resistente al agua con alcance de hasta 10 km', 89.99, 15, 'walkie_motorola_t82.jpg'),
+('Botiquín primeros auxilios forestal', 'seguridad', 'Narval', 'Kit completo con material de curas, vendas y apósitos para emergencias en el monte', 34.50, 30, 'botiquin_forestal_narval.jpg');
