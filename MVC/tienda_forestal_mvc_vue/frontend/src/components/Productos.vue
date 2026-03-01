@@ -18,7 +18,7 @@
       <input
         type="text"
         v-model="terminoBusqueda"
-        placeholder="Buscar por nombre, tipo o marca..."
+        placeholder="¿Qué estás buscando?"
         @keyup.enter="accionEncontrar"
         class="search-input"
       />
@@ -78,7 +78,7 @@
             <h3 class="card-titulo">{{ p.nombre }}</h3>
             <p class="card-descripcion">{{ p.descripcion }}</p>
             <div class="card-precio-container">
-              <span class="card-precio">{{ p.precio }}€</span>
+              <span class="card-precio">{{ p.precio }} Euros</span>
               <span class="card-iva">IVA incluido</span>
             </div>
           </div>
@@ -221,23 +221,31 @@ cargarProductos()
 .catalogo-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 24px 20px;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: #1e293b;
 }
 
 .titulo-principal {
-  color: #2c3e50;
+  color: #0f172a;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 10px;
+  margin-bottom: 32px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 12px;
+  display: inline-block;
+  width: 100%;
 }
 
 .subtitulo {
-  color: #34495e;
-  margin-bottom: 15px;
+  color: #334155;
+  margin-bottom: 16px;
   font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* ============================================================
@@ -245,8 +253,8 @@ cargarProductos()
    ============================================================ */
 .busqueda-container {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 32px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -254,88 +262,106 @@ cargarProductos()
 
 .search-input {
   flex: 1;
-  padding: 12px 15px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
   font-size: 16px;
-  transition: border-color 0.3s;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
 /* ============================================================
    BOTONES
    ============================================================ */
 .btn {
-  padding: 12px 20px;
+  padding: 14px 24px;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: all 0.3s ease;
-  font-weight: 600;
+  transition: all 0.2s ease;
+  line-height: 1;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-buscar {
-  background-color: #3498db;
+  background-color: #3b82f6;
   color: white;
 }
 
 .btn-buscar:hover {
-  background-color: #2980b9;
+  background-color: #2563eb;
 }
 
 .btn-filtrar {
-  background-color: #2ecc71;
+  background-color: #10b981;
   color: white;
 }
 
 .btn-filtrar:hover {
-  background-color: #27ae60;
+  background-color: #059669;
 }
 
 .icono {
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
 /* ============================================================
    FILTROS
    ============================================================ */
 .filtros-container {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  border: 1px solid #e9ecef;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
 .filtros-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+  gap: 16px;
   align-items: end;
 }
 
-.input-filtro, .select-filtro {
-  padding: 10px 12px;
-  border: 1px solid #ced4da;
-  border-radius: 6px;
+.input-filtro,
+.select-filtro {
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
+  background-color: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-filtro:focus,
+.select-filtro:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .select-filtro {
@@ -344,117 +370,132 @@ cargarProductos()
 }
 
 /* ============================================================
-   PRODUCTOS
+   TARJETAS DE PRODUCTO
    ============================================================ */
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
-  margin: 30px 0;
+  gap: 32px;
+  margin: 32px 0;
 }
 
 .card-producto {
-  background: white;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-producto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.15);
 }
 
 .card-imagen-container {
   position: relative;
-  height: 180px;
+  height: 200px;
   overflow: hidden;
+  background-color: #f1f5f9;
 }
 
 .card-imagen {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.4s ease;
 }
 
 .card-producto:hover .card-imagen {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .card-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #27ae60;
+  top: 12px;
+  right: 12px;
+  background: #10b981;
   color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bajo-stock {
-  background: #e74c3c;
+  background: #ef4444;
 }
 
 .card-contenido {
-  padding: 20px;
+  padding: 20px 18px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-titulo {
-  color: #2c3e50;
-  margin: 0 0 10px 0;
-  font-size: 1.1rem;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
   line-height: 1.3;
 }
 
 .card-descripcion {
-  color: #7f8c8d;
-  font-size: 14px;
+  color: #475569;
+  font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  flex: 1;
 }
 
 .card-precio-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
 }
 
 .card-precio {
-  color: #2c3e50;
-  font-size: 1.4rem;
-  font-weight: bold;
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .card-iva {
-  color: #95a5a6;
-  font-size: 12px;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 /* ============================================================
-   CARGA
+   ESTADOS DE CARGA / SIN RESULTADOS
    ============================================================ */
 .carga-container {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.8s linear infinite;
   margin: 0 auto 20px;
 }
 
@@ -465,62 +506,76 @@ cargarProductos()
 
 .sin-resultados {
   text-align: center;
-  padding: 40px;
-  color: #7f8c8d;
-  font-size: 18px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 2px dashed #dee2e6;
+  padding: 60px 20px;
+  color: #64748b;
+  font-size: 1.1rem;
+  background: #f8fafc;
+  border-radius: 24px;
+  border: 2px dashed #cbd5e1;
 }
 
 /* ============================================================
    PAGINACIÓN
    ============================================================ */
 .paginacion-container {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #e9ecef;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
 }
 
 .paginacion-info {
   text-align: center;
-  color: #6c757d;
-  margin-bottom: 15px;
-  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .paginacion-botones {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  /* Eliminado el fondo azul que causaba conflicto */
+  background-color: transparent;
+  color: inherit;
 }
 
-.btn-paginacion, .btn-pagina {
-  padding: 8px 15px;
-  border: 1px solid #dee2e6;
+.btn-paginacion,
+.btn-pagina {
+  padding: 10px 16px;
+  border: 1px solid #e2e8f0;
   background: white;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s;
-  font-size: 14px;
+  transition: all 0.15s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-paginacion:hover:not(:disabled),
 .btn-pagina:hover:not(.activa) {
-  background: #f8f9fa;
-  border-color: #adb5bd;
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
 }
 
 .btn-paginacion:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background: #f1f5f9;
 }
 
 .btn-pagina.activa {
-  background-color: #3498db;
+  background-color: #3b82f6;
   color: white;
-  border-color: #3498db;
-  font-weight: bold;
+  border-color: #3b82f6;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 </style>
