@@ -1,38 +1,26 @@
-#version: "3.9" #Es un argumneto obsoleto.
-#              #Declaramos la version de la especificacion del archivo compose
-               #en las versiones actualizadas de docker no es necesario, ya que 
-               #lo detecta automaticamente.
-
 services:
   #Desplegamos los servicios del backend en Flask
   backend:
     build: ./backend
     container_name: tienda_flask_backend
-    restart: no
+    restart: unless-stop
     ports:
       - "5000:5000"
     environment:
       # Variables para que Flask se conecte al MySQL del contenedor
       DB_HOST: db
-      DB_USER: mopii
-      DB_PASSWORD: daw
+      DB_USER: mopiijesus
+      DB_PASSWORD: dawjesus
       DB_NAME: tienda_forestal
     depends_on:
       - db
- # Espera a que MySQL esté listo
- #   healthcheck:
- #     test: ["CMD", "python", "-c", "import mysql.connector; mysql.connector.connect(host='db', user='mopii', password='daw', database='tienda_forestal')"]
- #     interval: 10s
- #     timeout: 30s
- #     retries: 5
 
   #Desplegamos los servicios del frontend
   frontend:
     build: ./frontend
     container_name: tienda_vue_frontend
-    restart: no
+    restart: unless-stop
     ports:
- #    - "8080:8080"
       - "8080:80"
     depends_on:
       - backend
@@ -41,7 +29,7 @@ services:
   db:
     image: mysql:8.0
     container_name: tienda_mysql_db
-    restart: no 
+    restart: unless-stop 
     environment:
       MYSQL_ROOT_PASSWORD: iesmariamoliner
       MYSQL_DATABASE: tienda_forestal
@@ -64,8 +52,6 @@ services:
                       # login:
     environment:
       PMA_HOST: db        # phpMyAdmin debe mirar al contenedor "db" creado con anterioridad
-  #   PMA_USER: root
-  #   PMA_PASSWORD: iesmariamoliner
       PMA_USER: mopii
       PMA_PASSWORD: daw
     depends_on:
