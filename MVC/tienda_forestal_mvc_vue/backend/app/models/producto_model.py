@@ -30,8 +30,8 @@ def obtener_conexion():
     """
     return MySQLdb.connect(
         host=os.getenv('MYSQL_HOST', 'db'),
-        user=os.getenv('MYSQL_USER', 'mopiijesus'),
-        passwd=os.getenv('MYSQL_PASSWORD', 'dawjesus'),
+        user=os.getenv('MYSQL_USER', 'mopii'),
+        passwd=os.getenv('MYSQL_PASSWORD', 'daw'),
         db=os.getenv('MYSQL_DB', 'tienda_forestal'),
         charset='utf8mb4'
     )
