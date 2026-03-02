@@ -33,8 +33,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: iesmariamoliner
       MYSQL_DATABASE: tienda_forestal
-      MYSQL_USER: mopii
-      MYSQL_PASSWORD: daw
+      MYSQL_USER: mopiijesus
+      MYSQL_PASSWORD: dawjesus
     ports:
       - "3306:3306"
     volumes:
